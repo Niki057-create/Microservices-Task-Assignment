@@ -1,48 +1,48 @@
 # Microservices-Task
 
-# Step 1
+## Step 1
 
-# Fork the given Repo
+## Fork the given Repo
 
 <img width="1254" height="691" alt="image" src="https://github.com/user-attachments/assets/9d7b8200-e71e-4496-b4f0-177c8ed7a513" />
 
 <img width="1256" height="707" alt="Forked Repo" src="https://github.com/user-attachments/assets/9a829626-a020-4c4b-90f3-31ce7d3b1638" />
 
-# Step 2
+## Step 2
 
-# Start the docker engine by opening your Docker Desktop App
+## Starting the docker engine by opening Docker Desktop App
 
 <img width="1278" height="761" alt="Starting Docker Engine" src="https://github.com/user-attachments/assets/8d12c266-7058-4042-afe9-3315348b20e0" />
 
-# Step 3
+## Step 3
 
-# Create Microservices Task Submission Folder and open it in VS Code Editor
+## Creating Microservices Task Submission Folder and opening it in the VS Code Editor
 
 <img width="828" height="440" alt="Folder Creation" src="https://github.com/user-attachments/assets/dfee82cd-a0d1-420e-ac73-0a16966cd316" />
 
 <img width="1280" height="736" alt="Opening Folder in VS Code" src="https://github.com/user-attachments/assets/26f4f2e7-ff84-4452-b61f-cd6a7e32f0e6" />
 
-# Clone the forked repository
+## Cloning the forked repository in VS Code Editor
 
 <img width="1278" height="724" alt="Cloning the forked repository" src="https://github.com/user-attachments/assets/136546b8-77b5-45c8-8925-f18270a95c2d" />
 
-# Create Dockerfile in each folder and add the script in all the package.json files
+## Creating Dockerfile in each folder and adding the script in all the package.json files
 
 <img width="1280" height="770" alt="Dockerfile added in each folder" src="https://github.com/user-attachments/assets/23b54bfd-0acd-4bf5-8685-99345f5d0f66" />
 
 <img width="1145" height="463" alt="Adding script in all package json files" src="https://github.com/user-attachments/assets/4b8f3457-f86e-4c5a-990c-492a19bcb28b" />
 
-# Create the docker-compose.yml and writing the build for all four services
+## Creating the docker-compose.yml and writing the build for all four services
 
 <img width="1150" height="749" alt="Creation of dockercompose file" src="https://github.com/user-attachments/assets/f7ec3eda-6676-4f9c-9d39-4b5552e3a9a9" />
 
-# Currently, no containers is/are running in the Docker Desktop
+## Currently, no containers is/are running in the Docker Desktop app
 
 <img width="1277" height="575" alt="No running containers in docker" src="https://github.com/user-attachments/assets/de25550d-3f1a-41d1-a737-331669ad53ab" />
 
 <img width="865" height="464" alt="No running containers in docker powershell" src="https://github.com/user-attachments/assets/32acc726-98c8-4e57-8608-09d28ed99b13" />
 
-# Let's run docker-compose up --build and create the container and check from Docker app and terminal that its created or not
+## Let's run docker-compose up --build and create the container and check from Docker Desktop app and Powershell that its created or not
 
 <img width="1138" height="723" alt="Docker-compose build" src="https://github.com/user-attachments/assets/123cbd88-2cb5-4a5a-b447-eed2eadd9d59" />
 
@@ -50,9 +50,9 @@
 
 <img width="850" height="415" alt="Build showing in Powershell" src="https://github.com/user-attachments/assets/1d808736-1ab9-4be7-8571-e07cba39f45d" />
 
-# Step 4
+## Step 4
 
-# Open the respected ports in the browser to see the data
+## Open the respected ports in the browser to see the data
 
 <img width="665" height="382" alt="Port 3000 working" src="https://github.com/user-attachments/assets/e3ed226c-f28e-49d2-be42-e0b6803e06af" />
 
@@ -64,9 +64,9 @@
 
 <img width="674" height="200" alt="Port 3003 working 2" src="https://github.com/user-attachments/assets/f87da60d-3747-47ca-ab6b-6a2ef795d99c" />
 
-# Step 5
+## Step 5
 
-# Pushing the code and changes made to GitHub
+## Pushing the code and changes made to GitHub
 
 <img width="742" height="158" alt="Pushing the code to Github" src="https://github.com/user-attachments/assets/b21e2104-3b3d-4fd7-92c5-1ccfc03405e8" />
 
