@@ -70,6 +70,260 @@
 
 <img width="742" height="158" alt="Pushing the code to Github" src="https://github.com/user-attachments/assets/b21e2104-3b3d-4fd7-92c5-1ccfc03405e8" />
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Microservices Kubernetes Deployment (Minikube)
+
+This repository contains the **Kubernetes deployment manifests** and setup instructions for deploying a **Node.js-based microservices application** on **Minikube**. The services are containerized and deployed using Kubernetes best practices, including **resource limits**, **liveness/readiness probes**, **secrets**, and **ClusterIP services**.
+
+---
+
+## 📌 Application Overview
+
+The application consists of the following microservices:
+
+| Service Name    | Port | Description                                      |
+| --------------- | ---- | ------------------------------------------------ |
+| User Service    | 3000 | Manages user-related operations                  |
+| Product Service | 3001 | Handles product catalog APIs                     |
+| Order Service   | 3002 | Manages order processing                         |
+| Gateway Service | 3003 | API Gateway routing requests to backend services |
+
+Each service is deployed as a **Kubernetes Deployment** with a corresponding **ClusterIP Service**.
+
+---
+
+## 🚀 Minikube Setup Steps
+
+Follow the steps below to set up Minikube locally:
+
+```bash
+# Verify system supports virtualization
+minikube version
+
+# Start Minikube
+minikube start
+
+# Verify cluster status
+kubectl cluster-info
+
+# Verify nodes
+kubectl get nodes
+```
+
+Ensure Docker Desktop is running and Kubernetes is enabled (if using Docker Desktop).
+
+<img width="734" height="392" alt="minikube setup" src="https://github.com/user-attachments/assets/83525940-4fa4-40e8-ae23-fec1fcce2e97" />
+
+<img width="414" height="787" alt="image" src="https://github.com/user-attachments/assets/69959d32-a235-4044-a3ec-24f8ad1e735d" />
+
+---
+
+## 📦 Deployment Process (kubectl apply -f)
+
+All Kubernetes manifests are stored under the `K8s/` directory.
+
+### Step 1: Navigate to K8s directory
+
+```bash
+cd K8s
+```
+
+### Step 2: Apply Deployment and Service manifests
+
+```bash
+kubectl apply -f userservice-deployment.yml
+kubectl apply -f productservice-deployment.yml
+kubectl apply -f orderservice-deployment.yml
+kubectl apply -f gatewayservice-deployment.yml
+```
+
+### Step 3: Verify resources
+
+```bash
+kubectl get deployments
+kubectl get pods
+kubectl get svc
+```
+
+All pods should be in **Running** state and services should be of type **ClusterIP**.
+
+<img width="655" height="80" alt="image" src="https://github.com/user-attachments/assets/10443551-4771-40e7-bd53-9f5b9e8a6e22" />
+
+---
+
+## 🔍 Service Testing Instructions
+
+### Option 1: Using kubectl port-forward (Recommended for testing)
+
+#### User Service
+
+```bash
+kubectl port-forward svc/user-service 3000:3000
+```
+
+Access:
+
+```
+http://localhost:3000/users
+```
+
+#### Product Service
+
+```bash
+kubectl port-forward svc/product-service 3001:3001
+```
+
+Access:
+
+```
+http://localhost:3001/products
+```
+
+#### Order Service
+
+```bash
+kubectl port-forward svc/order-service 3002:3002
+```
+
+Access:
+
+```
+http://localhost:3002/orders
+```
+
+#### Gateway Service
+
+```bash
+kubectl port-forward svc/gateway-service 3003:3003
+```
+
+Access:
+
+```
+http://localhost:3003/health
+```
+
+Access:
+
+```
+http://localhost:3003/api/users
+```
+
+Access:
+
+```
+http://localhost:3003/api/products
+```
+
+Access:
+
+```
+http://localhost:3003/api/orders
+```
+
+### Option 2: Service-to-Service Communication (ClusterIP)
+
+Inside the cluster, services communicate using **DNS-based service discovery**:
+
+```text
+http://user-service:3000
+http://product-service:3001
+http://order-service:3002
+```
+
+These URLs are injected via environment variables using Kubernetes **Secrets**.
+
+---
+
+## 🧪 Health Checks (Probes)
+
+Each deployment includes:
+
+* **Liveness Probe** – Restarts container if app becomes unhealthy
+* **Readiness Probe** – Controls traffic routing to the pod
+
+Example:
+
+```yaml
+livenessProbe:
+  httpGet:
+    path: /products
+    port: 3001
+  initialDelaySeconds: 30
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /products
+    port: 3001
+  initialDelaySeconds: 10
+  periodSeconds: 5
+```
+
+---
+
+## ⚙️ Resource Requests and Limits
+
+Each container defines CPU and memory constraints:
+
+```yaml
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "250m"
+    memory: "256Mi"
+```
+
+This ensures:
+
+* Fair scheduling
+* Protection against resource exhaustion
+
+---
+
+## 🛠 Troubleshooting Tips
+
+### 1. Pod stuck in ImagePullBackOff
+
+```bash
+kubectl describe pod <pod-name>
+```
+
+✔ Ensure image exists in Docker Hub
+✔ Verify image name and tag
+
+---
+
+### 2. Pod Running but NOT Ready
+
+```bash
+kubectl describe pod <pod-name>
+```
+
+✔ Check readiness probe path
+✔ Ensure API endpoint returns HTTP 200
+
+---
+
+### 3. Probe failures (404 / 500)
+
+✔ Confirm correct API path (`/users`, `/products`, `/gateway`)
+✔ Test endpoint locally using port-forward
+
+---
+
+### 4. View container logs
+
+```bash
+kubectl logs <pod-name>
+```
+
+✨ **Status:** Kubernetes Microservices Deployment successfully completed and validated on Minikube.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Overview
 This document provides details on testing various services after running the `docker-compose` file. These services include User, Product, Order, and Gateway Services. Each service has its own endpoints for testing purposes.
