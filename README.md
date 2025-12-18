@@ -151,25 +151,33 @@ All pods should be in **Running** state and services should be of type **Cluster
 <img width="655" height="80" alt="image" src="https://github.com/user-attachments/assets/10443551-4771-40e7-bd53-9f5b9e8a6e22" />
 
 
+
 <img width="1029" height="724" alt="userservice get pods and docker push" src="https://github.com/user-attachments/assets/abe05e3d-fa0e-4330-bd7d-29fb97580247" />
+
 
 
 <img width="748" height="286" alt="productservice get pods running" src="https://github.com/user-attachments/assets/80b89939-a15f-4b8f-823f-34f7bce9b0a7" />
 
 
+
 <img width="752" height="205" alt="orderservice get pods" src="https://github.com/user-attachments/assets/475dcdef-deaf-4251-80bf-35b1abda444e" />
+
 
 
 <img width="752" height="295" alt="gatewayservice get pods" src="https://github.com/user-attachments/assets/a1924713-b617-4ea8-885e-9e706025270c" />
 
 
+
 <img width="686" height="92" alt="image" src="https://github.com/user-attachments/assets/0cb2060b-c673-4657-8446-280f3e947230" />
+
 
 
 <img width="655" height="80" alt="All pods in running state" src="https://github.com/user-attachments/assets/ac8a2fdf-57e7-4f4d-8379-bd4039b7c3f8" />
 
 
+
 <img width="662" height="109" alt="get svc showing ClusterIP for all" src="https://github.com/user-attachments/assets/44d78552-593a-49d8-bda3-75cf4edf663b" />
+
 
 
 ---
@@ -351,10 +359,16 @@ kubectl describe pod <pod-name>
 <img width="456" height="35" alt="image" src="https://github.com/user-attachments/assets/d3b551d5-b65a-418d-8a4d-4571629670a4" />
 
 
+<img width="762" height="514" alt="userservice describe pod" src="https://github.com/user-attachments/assets/2622c69a-0060-4f0b-b4a3-f5d495681452" />
+
+
+
 ✔ Ensure image exists in Docker Hub
 ✔ Verify image name and tag
 
+
 <img width="504" height="158" alt="image" src="https://github.com/user-attachments/assets/7e143d01-9a6c-4f9c-b6a7-4ac70b098767" />
+
 
 ---
 
@@ -384,15 +398,24 @@ kubectl logs <pod-name>
 
 <img width="776" height="132" alt="orderservice pod name logs" src="https://github.com/user-attachments/assets/dc6375fc-0c70-46a2-8b8b-b58be5289595" />
 
+
+
 <img width="752" height="116" alt="gatewayservice pod name logs" src="https://github.com/user-attachments/assets/732b36b9-d628-4050-8ba9-79610a26249a" />
+
+
 
 
 
 ✨ **Status:** Kubernetes Microservices Deployment successfully completed and validated on Minikube.
 
+
+
 <img width="788" height="62" alt="Testing DNS inside a pod" src="https://github.com/user-attachments/assets/7ed6b713-0d24-4df8-9261-db9ad25b6f40" />
 
+
+
 <img width="749" height="109" alt="Testing DNS inside a pod1" src="https://github.com/user-attachments/assets/ab4c1c28-c4ee-43dc-ac6b-5768159f07c9" />
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
