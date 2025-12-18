@@ -150,19 +150,27 @@ All pods should be in **Running** state and services should be of type **Cluster
 
 <img width="655" height="80" alt="image" src="https://github.com/user-attachments/assets/10443551-4771-40e7-bd53-9f5b9e8a6e22" />
 
+
 <img width="1029" height="724" alt="userservice get pods and docker push" src="https://github.com/user-attachments/assets/abe05e3d-fa0e-4330-bd7d-29fb97580247" />
+
 
 <img width="748" height="286" alt="productservice get pods running" src="https://github.com/user-attachments/assets/80b89939-a15f-4b8f-823f-34f7bce9b0a7" />
 
+
 <img width="752" height="205" alt="orderservice get pods" src="https://github.com/user-attachments/assets/475dcdef-deaf-4251-80bf-35b1abda444e" />
+
 
 <img width="752" height="295" alt="gatewayservice get pods" src="https://github.com/user-attachments/assets/a1924713-b617-4ea8-885e-9e706025270c" />
 
+
 <img width="686" height="92" alt="image" src="https://github.com/user-attachments/assets/0cb2060b-c673-4657-8446-280f3e947230" />
+
 
 <img width="655" height="80" alt="All pods in running state" src="https://github.com/user-attachments/assets/ac8a2fdf-57e7-4f4d-8379-bd4039b7c3f8" />
 
+
 <img width="662" height="109" alt="get svc showing ClusterIP for all" src="https://github.com/user-attachments/assets/44d78552-593a-49d8-bda3-75cf4edf663b" />
+
 
 ---
 
@@ -176,7 +184,7 @@ All pods should be in **Running** state and services should be of type **Cluster
 kubectl port-forward svc/user-service 3000:3000
 ```
 
-<img width="740" height="614" alt="userservice port-forward success" src="https://github.com/user-attachments/assets/ac4ad37b-0d6f-472f-ac51-93a3970955b3" />
+<img width="740" height="99" alt="userservice port-forward success" src="https://github.com/user-attachments/assets/9e8fe4e0-c7af-4dda-82fa-9e6c8388289c" />
 
 
 Access:
