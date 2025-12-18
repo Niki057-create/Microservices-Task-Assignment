@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: product-service-secret
+type: Opaque
+data:
+  MONGODB_URI: bW9uZ29kYitzcnY6Ly9uaWtpdGhhYmFsYWppMTQzOkFuZ2VsMDUwN0BuaWtpdGhhLjBxemI1ZmsubW9uZ29kYi5uZXQvbWljcm9zZXJ2aWNlc19wcm9kdWN0cw==
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+        - name: product-service
+          image: nikitha055/microservices-product-service:latest
+          ports:
+            - containerPort: 3001
+          env:
+            - name: PORT
+              value: "3001"
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: product-service-secret
+                  key: MONGODB_URI
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
+          livenessProbe:
+            httpGet:
+              path: /products
+              port: 3001
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /products
+              port: 3001
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service
+  labels:
+    app: product-service
+spec:
+  type: ClusterIP
+  selector:
+    app: product-service
+  ports:
+    - name: http
+      port: 3001
+      targetPort: 3001
