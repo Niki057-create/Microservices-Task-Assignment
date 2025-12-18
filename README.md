@@ -70,7 +70,7 @@
 
 <img width="742" height="158" alt="Pushing the code to Github" src="https://github.com/user-attachments/assets/b21e2104-3b3d-4fd7-92c5-1ccfc03405e8" />
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Microservices Kubernetes Deployment (Minikube)
 
@@ -150,6 +150,20 @@ All pods should be in **Running** state and services should be of type **Cluster
 
 <img width="655" height="80" alt="image" src="https://github.com/user-attachments/assets/10443551-4771-40e7-bd53-9f5b9e8a6e22" />
 
+<img width="1029" height="724" alt="userservice get pods and docker push" src="https://github.com/user-attachments/assets/abe05e3d-fa0e-4330-bd7d-29fb97580247" />
+
+<img width="748" height="286" alt="productservice get pods running" src="https://github.com/user-attachments/assets/80b89939-a15f-4b8f-823f-34f7bce9b0a7" />
+
+<img width="752" height="205" alt="orderservice get pods" src="https://github.com/user-attachments/assets/475dcdef-deaf-4251-80bf-35b1abda444e" />
+
+<img width="752" height="295" alt="gatewayservice get pods" src="https://github.com/user-attachments/assets/a1924713-b617-4ea8-885e-9e706025270c" />
+
+<img width="686" height="92" alt="image" src="https://github.com/user-attachments/assets/0cb2060b-c673-4657-8446-280f3e947230" />
+
+<img width="655" height="80" alt="All pods in running state" src="https://github.com/user-attachments/assets/ac8a2fdf-57e7-4f4d-8379-bd4039b7c3f8" />
+
+<img width="662" height="109" alt="get svc showing ClusterIP for all" src="https://github.com/user-attachments/assets/44d78552-593a-49d8-bda3-75cf4edf663b" />
+
 ---
 
 ## 🔍 Service Testing Instructions
@@ -162,11 +176,17 @@ All pods should be in **Running** state and services should be of type **Cluster
 kubectl port-forward svc/user-service 3000:3000
 ```
 
+<img width="740" height="614" alt="userservice port-forward success" src="https://github.com/user-attachments/assets/ac4ad37b-0d6f-472f-ac51-93a3970955b3" />
+
+
 Access:
 
 ```
 http://localhost:3000/users
 ```
+
+<img width="613" height="286" alt="userservice working on port 3000" src="https://github.com/user-attachments/assets/2b16b005-5f26-423a-b99d-fd64fba6f702" />
+
 
 #### Product Service
 
@@ -174,11 +194,18 @@ http://localhost:3000/users
 kubectl port-forward svc/product-service 3001:3001
 ```
 
+<img width="746" height="212" alt="productservice port-forward success" src="https://github.com/user-attachments/assets/99a2b7df-8187-4f1f-aeb0-89ab433fbd12" />
+
+
 Access:
 
 ```
 http://localhost:3001/products
 ```
+
+<img width="587" height="316" alt="productservice working on port 3001" src="https://github.com/user-attachments/assets/fee8e3d7-9f94-45aa-a0c8-d7a1d390ea5b" />
+
+
 
 #### Order Service
 
@@ -186,11 +213,17 @@ http://localhost:3001/products
 kubectl port-forward svc/order-service 3002:3002
 ```
 
+<img width="750" height="101" alt="orderservice port-forward" src="https://github.com/user-attachments/assets/19b4d8ef-80f7-4bb7-8104-828a7d941e82" />
+
+
 Access:
 
 ```
 http://localhost:3002/orders
 ```
+
+<img width="734" height="318" alt="orderservice working on port 3002" src="https://github.com/user-attachments/assets/6de9457d-80c6-4a53-86a4-5ab50c6fc72b" />
+
 
 #### Gateway Service
 
@@ -198,11 +231,17 @@ http://localhost:3002/orders
 kubectl port-forward svc/gateway-service 3003:3003
 ```
 
+<img width="753" height="119" alt="gatewayservice port-forward" src="https://github.com/user-attachments/assets/c101d2d2-8b20-46cb-b329-3ec5333d9ad4" />
+
+
 Access:
 
 ```
 http://localhost:3003/health
 ```
+
+<img width="761" height="420" alt="gatewayservice working on port 3003" src="https://github.com/user-attachments/assets/339182b5-4909-4cca-9c4a-5d0e996762c3" />
+
 
 Access:
 
@@ -210,17 +249,26 @@ Access:
 http://localhost:3003/api/users
 ```
 
+<img width="662" height="272" alt="gatewayservice working on port 3003(1)" src="https://github.com/user-attachments/assets/d8627919-d22a-4378-a097-748237d5fb98" />
+
+
 Access:
 
 ```
 http://localhost:3003/api/products
 ```
 
+<img width="566" height="280" alt="gatewayservice working on port 3003(2)" src="https://github.com/user-attachments/assets/43ec9645-5319-46d2-9481-82f6e4030ae3" />
+
+
 Access:
 
 ```
 http://localhost:3003/api/orders
 ```
+
+<img width="595" height="307" alt="gatewayservice working on port 3003(3)" src="https://github.com/user-attachments/assets/1d797361-d04f-4c23-90bb-ca897a6872d1" />
+
 
 ### Option 2: Service-to-Service Communication (ClusterIP)
 
@@ -292,8 +340,13 @@ This ensures:
 kubectl describe pod <pod-name>
 ```
 
+<img width="456" height="35" alt="image" src="https://github.com/user-attachments/assets/d3b551d5-b65a-418d-8a4d-4571629670a4" />
+
+
 ✔ Ensure image exists in Docker Hub
 ✔ Verify image name and tag
+
+<img width="504" height="158" alt="image" src="https://github.com/user-attachments/assets/7e143d01-9a6c-4f9c-b6a7-4ac70b098767" />
 
 ---
 
@@ -321,9 +374,20 @@ kubectl describe pod <pod-name>
 kubectl logs <pod-name>
 ```
 
+<img width="776" height="132" alt="orderservice pod name logs" src="https://github.com/user-attachments/assets/dc6375fc-0c70-46a2-8b8b-b58be5289595" />
+
+<img width="752" height="116" alt="gatewayservice pod name logs" src="https://github.com/user-attachments/assets/732b36b9-d628-4050-8ba9-79610a26249a" />
+
+
+
 ✨ **Status:** Kubernetes Microservices Deployment successfully completed and validated on Minikube.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<img width="788" height="62" alt="Testing DNS inside a pod" src="https://github.com/user-attachments/assets/7ed6b713-0d24-4df8-9261-db9ad25b6f40" />
+
+<img width="749" height="109" alt="Testing DNS inside a pod1" src="https://github.com/user-attachments/assets/ab4c1c28-c4ee-43dc-ac6b-5768159f07c9" />
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Overview
 This document provides details on testing various services after running the `docker-compose` file. These services include User, Product, Order, and Gateway Services. Each service has its own endpoints for testing purposes.
